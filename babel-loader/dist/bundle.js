@@ -105,7 +105,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./babe
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _message = __webpack_require__(/*! ./message.js */ \"./babel-loader/message.js\");\n\n__webpack_require__(/*! ./estilos.css */ \"./babel-loader/estilos.css\");\n\ndocument.write(_message.firstMessage);\nconsole.log('hello jajaja2');\n\n//# sourceURL=webpack:///./babel-loader/index.js?");
+eval("\n\nvar _message = __webpack_require__(/*! ./message.js */ \"./babel-loader/message.js\");\n\n__webpack_require__(/*! ./estilos.css */ \"./babel-loader/estilos.css\");\n\ndocument.write(_message.firstMessage);\n(0, _message.delayedMessage)();\nconsole.log('hello jajaja2');\n\n//# sourceURL=webpack:///./babel-loader/index.js?");
 
 /***/ }),
 
@@ -117,7 +117,7 @@ eval("\n\nvar _message = __webpack_require__(/*! ./message.js */ \"./babel-loade
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nmodule.exports = {\n    firstMessage: 'hola mundo desde el modulo'\n};\n\n//# sourceURL=webpack:///./babel-loader/message.js?");
+eval("\n\nvar waitTime = new Promise(function (todoOk, todoMal) {\n    setTimeout(function () {\n        todoOk('han pasado 3 segundos');\n    }, 3000);\n});\n\nmodule.exports = {\n    firstMessage: 'hola mundo desde el modulo',\n    delayedMessage: async function delayedMessage() {\n        var message = await waitTime;\n        console.log(message);\n    }\n};\n\n//# sourceURL=webpack:///./babel-loader/message.js?");
 
 /***/ })
 
